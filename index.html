@@ -73,6 +73,7 @@
                 getComputerChoice();
                 getPlayerChoice();
                 getResult();
+                
             }
         }
 
@@ -80,13 +81,15 @@
 
         /*--Determines winner of the 5 rounds--*/
         if (playerWin > computerWin){
-            alert("YOU WIN!!!");
+            alert("YOU WIN!!!")
+            console.log("!!!!! YOU WIN !!!!!");
         }
         else {
-            alert("YOU LOSE!!!");
+            alert("YOU LOSE!!!")
+            console.log("!!!!! YOU LOSE !!!!!");
         }
 
-        console.log(computerWin,playerWin)
+        console.log("Score: You: " + playerWin + " Computer: " + computerWin);
             
     </script>
     
