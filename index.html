@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+    <script>
+        
+        let computerChoice;
+        let playerChoice;
+        let result;
+        let playerWin = 0;
+        let computerWin = 0;
+        
+        /*--Computer chooses rock, paper, or scissors--*/
+        function getComputerChoice()
+        {
+            let choice = Math.floor(Math.random() * 3) + 1;
+
+            if (choice === 1){
+                computerChoice = "rock";
+            }
+            else if ( choice === 2){
+                computerChoice = "paper";
+            }
+            else if ( choice === 3){
+                computerChoice = "scissors";
+            }    
+        }
+        
+        /*--Player chooses rock, paper, or scissors--*/
+        function getPlayerChoice(){
+            playerChoice = prompt("Rock Paper or Scissors?:");
+        }
+
+        /*--Find winner of the round--*/
+        function getResult(){
+            if (playerChoice == "rock" && computerChoice == "scissors"){
+                alert("Rock beats Scissors! You win!")
+                playerWin++;
+            }
+
+            else if (playerChoice == "paper" && computerChoice == "rock"){
+                alert("Paper beats Rock! You win!")
+                playerWin++;
+            }
+
+            else if (playerChoice == "scissors" && computerChoice == "paper"){
+                alert("Scissors beats Paper! You win!")
+                playerWin++;
+            }
+
+            else if (playerChoice === computerChoice){
+                alert("Tie!")
+                    
+            }
+        
+            else{
+                alert("You lose! " + computerChoice + " beats " + playerChoice + "!");
+                computerWin++;
+            }
+
+        }
+        
+        /*--Play game that lasts 5 rounds--*/
+        function game(){
+            for (i = 0; i < 5; i++){
+                
+                getComputerChoice();
+                getPlayerChoice();
+                getResult();
+            }
+        }
+
+        game();
+
+        /*--Determines winner of the 5 rounds--*/
+        if (playerWin > computerWin){
+            alert("YOU WIN!!!");
+        }
+        else {
+            alert("YOU LOSE!!!");
+        }
+
+        console.log(computerWin,playerWin)
+            
+    </script>
+    
+</body>
+</html>
